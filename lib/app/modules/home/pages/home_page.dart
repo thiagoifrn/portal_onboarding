@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,8 +12,14 @@ class HomePage extends StatelessWidget {
           child: Text('Home Page'),
         ),
       ),
-      body: const Center(
-        child: Text('Bem vindo ao Portal Dev Iupper'),
+      body: Column(
+        children: [
+          const Text('Bem vindo ao Portal Dev Iupper'),
+          ElevatedButton(
+            onPressed: () => Modular.to.navigate('/menu_content/'),
+            child: const Text('entrar no menu'),
+          )
+        ],
       ),
     );
   }
