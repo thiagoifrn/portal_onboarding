@@ -17,35 +17,76 @@ class _MenuContentPageState extends State<MenuContentPage>
     super.initState();
     tabController = TabController(
       initialIndex: 0,
-      length: 2,
+      length: 5,
       vsync: this,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        bottom:TabBar(
+        bottom: TabBar(
           labelColor: const Color.fromRGBO(4, 2, 46, 1),
-          indicatorColor: const Color.fromRGBO(4, 2, 46, 1),
+          indicatorColor: Colors.white,
           unselectedLabelColor: Colors.grey,
           controller: tabController,
           onTap: (value) {
-            switch(value) {
-              case 1:
+            switch (value) {
+              case 0:
+                Modular.to.navigate('/home/');
                 break;
-            }
-            if(value == 1) {
-              Modular.to.pushNamed('/home/');
-            } else {
-              Modular.to.navigate('./blue');
+              case 1:
+                Modular.to.navigate('./first');
+                break;
+              case 2:
+                Modular.to.navigate('./two');
+                break;
+              case 3:
+                Modular.to.navigate('./three');
+                break;
+              case 4:
+                Modular.to.navigate('./four');
+                break;
+              default:
             }
           },
           tabs: const [
-            Text('primeiros passos'),
-            Text('tecnologias utilizadas'),
+            Text(
+              'Home Page',
+              style: TextStyle(
+                color: Color(0XFFFFFFFF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Primeiros passos e acessos',
+              style: TextStyle(
+                color: Color(0XFFFFFFFF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'tecnologias utilizadas',
+              style: TextStyle(
+                color: Color(0XFFFFFFFF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'materiais de estudo',
+              style: TextStyle(
+                color: Color(0XFFFFFFFF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'gossário',
+              style: TextStyle(
+                color: Color(0XFFFFFFFF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
