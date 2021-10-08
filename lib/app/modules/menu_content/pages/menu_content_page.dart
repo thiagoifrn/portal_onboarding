@@ -37,16 +37,16 @@ class _MenuContentPageState extends State<MenuContentPage>
                 Modular.to.navigate('/home/');
                 break;
               case 1:
-                Modular.to.navigate('./first');
+                Modular.to.navigate('./primeiros-passos');
                 break;
               case 2:
-                Modular.to.navigate('./two');
+                Modular.to.navigate('./tecnologias-utilizadas');
                 break;
               case 3:
-                Modular.to.navigate('./three');
+                Modular.to.navigate('./materiais-de-estudos');
                 break;
               case 4:
-                Modular.to.navigate('./four');
+                Modular.to.navigate('./glossario');
                 break;
               default:
             }
@@ -81,7 +81,7 @@ class _MenuContentPageState extends State<MenuContentPage>
               ),
             ),
             Text(
-              'gossário',
+              'glossário',
               style: TextStyle(
                 color: Color(0XFFFFFFFF),
                 fontWeight: FontWeight.bold,
