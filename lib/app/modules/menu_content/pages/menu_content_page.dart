@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:poc_portal/app/utils/all_colors.dart';
 
 class MenuContentPage extends StatefulWidget {
   const MenuContentPage({Key? key}) : super(key: key);
@@ -26,11 +27,10 @@ class _MenuContentPageState extends State<MenuContentPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0Xff23232E),
         bottom: TabBar(
-          labelColor: const Color.fromRGBO(4, 2, 46, 1),
-          indicatorColor: Colors.white,
-          unselectedLabelColor: Colors.grey,
+          labelColor: AllColors.brandPrimary100,
+          indicatorColor: AllColors.light10,
+          unselectedLabelColor: AllColors.light10,
           controller: tabController,
           onTap: (value) {
             switch (value) {
