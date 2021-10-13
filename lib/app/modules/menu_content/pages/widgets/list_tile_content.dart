@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ListTileContent extends StatefulWidget {
   final List<ListTile> itemsMenu;
@@ -15,24 +16,34 @@ class ListTileContent extends StatefulWidget {
 class _ListTileContentState extends State<ListTileContent> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
         child: Row(
           children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.2,
-              child: ListView(
-                children: widget.itemsMenu
-                    .map(
-                      (e) => Card(
-                        elevation: 5,
-                        child: e,
-                      ),
-                    )
-                    .toList(),
-              ),
+            Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: widget.itemsMenu
+                          .map(
+                            (e) => Card(
+                              elevation: 5,
+                              child: e,
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                ),
+              ],
             ),
+            Expanded(child: RouterOutlet())
           ],
         ),
       ),

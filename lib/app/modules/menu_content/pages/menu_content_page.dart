@@ -16,7 +16,7 @@ class _MenuContentPageState extends State<MenuContentPage>
   void initState() {
     super.initState();
     tabController = TabController(
-      initialIndex: 0,
+      initialIndex: 1,
       length: 5,
       vsync: this,
     );
@@ -26,6 +26,7 @@ class _MenuContentPageState extends State<MenuContentPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0Xff23232E),
         bottom: TabBar(
           labelColor: const Color.fromRGBO(4, 2, 46, 1),
           indicatorColor: Colors.white,
@@ -37,7 +38,7 @@ class _MenuContentPageState extends State<MenuContentPage>
                 Modular.to.navigate('/home/');
                 break;
               case 1:
-                Modular.to.navigate('./primeiros-passos');
+                Modular.to.navigate('./primeiros_passos');
                 break;
               case 2:
                 Modular.to.navigate('./tecnologias-utilizadas');
@@ -52,39 +53,65 @@ class _MenuContentPageState extends State<MenuContentPage>
             }
           },
           tabs: const [
-            Text(
-              'Home Page',
-              style: TextStyle(
-                color: Color(0XFFFFFFFF),
-                fontWeight: FontWeight.bold,
+            SizedBox(
+              width: 276,
+              height: 52,
+              child: Center(
+                child: Text(
+                  'Home Page',
+                  style: TextStyle(
+                    color: Color(0XFFFFFFFF),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-            Text(
-              'Primeiros passos e acessos',
-              style: TextStyle(
-                color: Color(0XFFFFFFFF),
-                fontWeight: FontWeight.bold,
+            SizedBox(
+              width: 176,
+              height: 53,
+              child: Center(
+                child: Text(
+                  'primeiros passos e\n\n acessos',
+                  style: TextStyle(
+                    color: Color(0XFFFFFFFF),
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
-            Text(
-              'tecnologias utilizadas',
-              style: TextStyle(
-                color: Color(0XFFFFFFFF),
-                fontWeight: FontWeight.bold,
+            SizedBox(
+              width: 276,
+              height: 52,
+              child: Center(
+                child: Text(
+                  'tecnologias\n\n utilizadas',
+                  style: TextStyle(
+                    color: Color(0XFFFFFFFF),
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
-            Text(
-              'materiais de estudo',
-              style: TextStyle(
-                color: Color(0XFFFFFFFF),
-                fontWeight: FontWeight.bold,
+            Center(
+              child: Text(
+                'materiais de\n\n estudo',
+                style: TextStyle(
+                  color: Color(0XFFFFFFFF),
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
-            Text(
-              'glossário',
-              style: TextStyle(
-                color: Color(0XFFFFFFFF),
-                fontWeight: FontWeight.bold,
+            Center(
+              child: Text(
+                'glossário',
+                style: TextStyle(
+                  color: Color(0XFFFFFFFF),
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],

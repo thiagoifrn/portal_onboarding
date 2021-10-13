@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           const Text('Bem vindo ao Portal Dev Iupper'),
           ElevatedButton(
             onPressed: () =>
-                Modular.to.navigate('/menu_content/primeiros-passos'),
+                Modular.to.navigate('/menu_content/primeiros_passos'),
             child: const Text('entrar no menu'),
           )
         ],
