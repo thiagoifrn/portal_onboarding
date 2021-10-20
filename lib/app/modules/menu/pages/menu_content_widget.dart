@@ -30,10 +30,10 @@ class _MenuContentWidgetState extends State<MenuContentWidget> {
                       .navigate('/menu/tecnologias_utilizadas/clean_arch');
                   break;
                 case 3:
-                  Modular.to.navigate('/menu/materiais-de-estudos/clean_arch');
+                  Modular.to.navigate('/menu/materiais_de_estudos/clean_arch');
                   break;
                 case 4:
-                  Modular.to.navigate('/menu/glossario');
+                  Modular.to.navigate('/menu/glossary');
                   break;
                 default:
               }

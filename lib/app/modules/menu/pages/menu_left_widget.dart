@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:poc_portal/app/modules/menu/models/items_left_menu.model.dart';
+import 'package:poc_portal/app/modules/menu/models/items_left_menu_model.dart';
 
 class MenuLeftWidget extends StatelessWidget {
   final String title;
@@ -13,7 +13,7 @@ class MenuLeftWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) => Container(
-        color: Colors.red.shade200,
+        color: const Color(0XFFE5E5E5),
         child: Column(
           children: [
             //Text(title),
@@ -24,15 +24,25 @@ class MenuLeftWidget extends StatelessWidget {
                   Flexible(
                     flex: 1,
                     child: ListView(
+                      shrinkWrap: true,
                       children: itemsLeftMenu
                           .map(
-                            (e) => ElevatedButton(
-                              child: Text(e.title),
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.blueGrey.shade300),
-                              onPressed: () {
-                                Modular.to.navigate(e.path);
-                              },
+                            (e) => Card(
+                              elevation: 1,
+                              child: ListTile(
+                                title: SizedBox(
+                                  width: 279,
+                                  height: 81,
+                                  child: Center(
+                                    child: Text(
+                                      e.title,
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                onTap: () => Modular.to.navigate(e.path),
+                              ),
                             ),
                           )
                           .toList(),

@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:poc_portal/app/modules/menu/examples/items_card_content_example.dart';
+import 'package:poc_portal/app/modules/menu/examples/items_left_menu_example.dart';
 
-import 'models/items_left_menu.model.dart';
 import 'pages/card_menu_left_widget.dart';
 import 'pages/menu_content_widget.dart';
 import 'pages/menu_left_widget.dart';
@@ -8,18 +10,6 @@ import 'pages/menu_left_widget.dart';
 class MenuModule extends Module {
   @override
   List<Bind<Object>> get binds => [];
-
-  static final itemsLeftMenuFirstSteps = [
-    ItemsLeftMenuModel(title: 'jira', path: './jira'),
-    ItemsLeftMenuModel(title: 'gitbook', path: './gitbook'),
-    ItemsLeftMenuModel(title: 'github', path: './github'),
-  ];
-  static final itemsLeftMenuTech = [
-    ItemsLeftMenuModel(title: 'arquiterura limpa', path: './clean_arch'),
-    ItemsLeftMenuModel(title: 'back', path: './back'),
-    ItemsLeftMenuModel(title: 'front', path: './front'),
-    ItemsLeftMenuModel(title: 'sre', path: './sre'),
-  ];
 
   @override
   List<ModularRoute> get routes => [
@@ -31,28 +21,34 @@ class MenuModule extends Module {
               '/primeiros_passos',
               child: (_, __) => MenuLeftWidget(
                 title: 'Primeiros passos e acessos',
-                itemsLeftMenu: itemsLeftMenuFirstSteps,
+                itemsLeftMenu: ItemsLeftMenuExample.itemsLeftMenuFirstSteps,
               ),
               children: [
                 ChildRoute(
                   '/jira',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'jira',
                     content: 'Jira é uma ferramente top, só vcs vendo',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentJira,
                   ),
                 ),
                 ChildRoute(
                   '/gitbook',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'gitbook',
                     content: 'Aqui é o gitbook',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentGitbook,
                   ),
                 ),
                 ChildRoute(
                   '/github',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'github',
                     content: 'Aqui é o github',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentGithub,
                   ),
                 )
               ],
@@ -61,7 +57,7 @@ class MenuModule extends Module {
               '/tecnologias_utilizadas',
               child: (_, __) => MenuLeftWidget(
                 title: 'tecnologias utilizadas',
-                itemsLeftMenu: itemsLeftMenuTech,
+                itemsLeftMenu: ItemsLeftMenuExample.itemsLeftMenuTech,
               ),
               children: [
                 ChildRoute(
@@ -93,7 +89,44 @@ class MenuModule extends Module {
                   ),
                 )
               ],
-            )
+            ),
+            ChildRoute(
+              '/materiais_de_estudos',
+              child: (_, __) => MenuLeftWidget(
+                  title: 'materias de estudo',
+                  itemsLeftMenu: ItemsLeftMenuExample.itemsLeftMenuStudy),
+              children: [
+                ChildRoute(
+                  '/clean_arch',
+                  child: (_, __) => const CardMenuLeftWidget(
+                    title: 'aquiterura limpa',
+                    content: 'Um dos nossos princípios ....',
+                  ),
+                ),
+                ChildRoute(
+                  '/sre',
+                  child: (_, __) => const CardMenuLeftWidget(
+                    title: 'sre',
+                    content: 'Sre malha de backends',
+                  ),
+                ),
+                ChildRoute(
+                  '/flutter',
+                  child: (_, __) => const CardMenuLeftWidget(
+                    title: 'flutter',
+                    content: 'Flutter é uma Ui toolkit',
+                  ),
+                ),
+                ChildRoute(
+                  '/docker',
+                  child: (_, __) => const CardMenuLeftWidget(
+                    title: 'docker',
+                    content: 'É um package manager para o kubernetes',
+                  ),
+                ),
+              ],
+            ),
+            ChildRoute('/glossary', child: (_, __) => Container()),
           ],
         ),
       ];
