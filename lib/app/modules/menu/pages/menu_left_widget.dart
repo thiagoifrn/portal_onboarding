@@ -16,11 +16,11 @@ class MenuLeftWidget extends StatelessWidget {
         color: const Color(0XFFE5E5E5),
         child: Column(
           children: [
-            //Text(title),
             SizedBox(
               height: constraints.maxHeight,
               child: Row(
                 children: [
+                  //Text(title),
                   Flexible(
                     flex: 1,
                     child: ListView(

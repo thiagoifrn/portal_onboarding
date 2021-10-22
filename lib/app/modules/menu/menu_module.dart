@@ -50,7 +50,34 @@ class MenuModule extends Module {
                     itemsCardContent:
                         ItemsCardContentExample.itemsCardContentGithub,
                   ),
-                )
+                ),
+                ChildRoute(
+                  '/vpn',
+                  child: (_, __) => CardMenuLeftWidget(
+                    title: 'vpn',
+                    content: 'Aqui é o github',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentVPN,
+                  ),
+                ),
+                ChildRoute(
+                  '/aws',
+                  child: (_, __) => CardMenuLeftWidget(
+                    title: 'aws',
+                    content: 'Aqui é o github',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentAWS,
+                  ),
+                ),
+                ChildRoute(
+                  '/shortcut',
+                  child: (_, __) => CardMenuLeftWidget(
+                    title: 'shortcut',
+                    content: 'Aqui é o github',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentShortcut,
+                  ),
+                ),
               ],
             ),
             ChildRoute(
@@ -62,30 +89,38 @@ class MenuModule extends Module {
               children: [
                 ChildRoute(
                   '/clean_arch',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'aquiterura limpa',
                     content: 'Um dos nossos princípios ....',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentCleanArch,
                   ),
                 ),
                 ChildRoute(
                   '/back',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: '[back] arquiterura de microsserviços',
                     content: 'Toda malha de backends',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentBack,
                   ),
                 ),
                 ChildRoute(
                   '/front',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: '[front] flutter',
                     content: 'Flutter é uma Ui toolkit',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentFront,
                   ),
                 ),
                 ChildRoute(
                   '/sre',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: '[sre] helm',
                     content: 'É um package manager para o kubernetes',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentSRE,
                   ),
                 )
               ],
@@ -98,30 +133,38 @@ class MenuModule extends Module {
               children: [
                 ChildRoute(
                   '/clean_arch',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'aquiterura limpa',
                     content: 'Um dos nossos princípios ....',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentCleanArch,
                   ),
                 ),
                 ChildRoute(
                   '/sre',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'sre',
                     content: 'Sre malha de backends',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentSRE,
                   ),
                 ),
                 ChildRoute(
                   '/flutter',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'flutter',
                     content: 'Flutter é uma Ui toolkit',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentFlutter,
                   ),
                 ),
                 ChildRoute(
                   '/docker',
-                  child: (_, __) => const CardMenuLeftWidget(
+                  child: (_, __) => CardMenuLeftWidget(
                     title: 'docker',
                     content: 'É um package manager para o kubernetes',
+                    itemsCardContent:
+                        ItemsCardContentExample.itemsCardContentDocker,
                   ),
                 ),
               ],
