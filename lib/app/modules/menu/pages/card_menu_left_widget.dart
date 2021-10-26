@@ -20,9 +20,11 @@ class CardMenuLeftWidget extends StatelessWidget {
         shrinkWrap: true,
         children: itemsCardContent!
             .map(
-              (e) => Padding(
-                padding: const EdgeInsets.all(32.0),
+              (e) => Container(
+                margin: const EdgeInsets.only(right: 32),
                 child: Card(
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16))),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
