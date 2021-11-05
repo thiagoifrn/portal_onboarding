@@ -1,6 +1,7 @@
 class MenuTop {
-  String title;
+  String? title;
   String path;
+  String? image;
 
-  MenuTop({required this.title, required this.path});
+  MenuTop({this.image, this.title, required this.path});
 }

@@ -2,13 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:poc_portal/app/modules/menu/models/items_left_menu_model.dart';
+import 'package:poc_portal/app/utils/all_colors.dart';
 
-class MenuLeftWidget extends StatelessWidget {
+class MenuLeftWidget extends StatefulWidget {
   final String title;
   final List<ItemsLeftMenuModel> itemsLeftMenu;
   const MenuLeftWidget(
       {Key? key, required this.title, required this.itemsLeftMenu})
       : super(key: key);
+
+  @override
+  State<MenuLeftWidget> createState() => _MenuLeftWidgetState();
+}
+
+class _MenuLeftWidgetState extends State<MenuLeftWidget> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class MenuLeftWidget extends StatelessWidget {
                 margin:
                     const EdgeInsets.symmetric(horizontal: 32, vertical: 28),
                 child: Text(
-                  title,
+                  widget.title,
                   style: const TextStyle(
                       fontSize: 36, fontWeight: FontWeight.bold),
                 ),
@@ -35,43 +43,47 @@ class MenuLeftWidget extends StatelessWidget {
                   children: [
                     Flexible(
                       flex: 1,
-                      child: ListView(
-                        shrinkWrap: true,
-                        children: itemsLeftMenu
-                            .map(
-                              (e) => Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 32),
-                                child: Card(
-                                  color: Modular.to.path.endsWith(
-                                          '/menu/primeiros_passos/jira')
-                                      ? const Color(0XFF353545)
-                                      : Colors.red,
-                                  shape: const RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(8))),
-                                  elevation: 1,
-                                  child: ListTile(
-                                    title: SizedBox(
-                                      width: 279,
-                                      height: 81,
-                                      child: Center(
-                                        child: Text(
-                                          e.title,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold),
+                      child: ListView.builder(
+                          itemCount: widget.itemsLeftMenu.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 32),
+                              child: Card(
+                                color: selectedIndex == index
+                                    ? AllColors.brandPrimary80
+                                    : null,
+                                shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8))),
+                                elevation: 1,
+                                child: ListTile(
+                                  title: SizedBox(
+                                    width: 279,
+                                    height: 81,
+                                    child: Center(
+                                      child: Text(
+                                        widget.itemsLeftMenu[index].title,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: selectedIndex == index
+                                              ? AllColors.light10
+                                              : AllColors.black,
                                         ),
                                       ),
                                     ),
-                                    onTap: () {
-                                      Modular.to.navigate(e.path);
-                                    },
                                   ),
+                                  onTap: () {
+                                    Modular.to.navigate(
+                                        widget.itemsLeftMenu[index].path);
+                                    setState(() {
+                                      selectedIndex = index;
+                                    });
+                                  },
                                 ),
                               ),
-                            )
-                            .toList(),
-                      ),
+                            );
+                          }),
                     ),
                     Flexible(
                       flex: 3,

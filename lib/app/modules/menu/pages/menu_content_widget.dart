@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:poc_portal/app/modules/menu/examples/menu_top_example.dart';
+import 'package:poc_portal/app/utils/all_colors.dart';
 
 class MenuContentWidget extends StatefulWidget {
   const MenuContentWidget({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class _MenuContentWidgetState extends State<MenuContentWidget> {
       length: MenuTopExample.menuTopList.length,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: AllColors.brandPrimary100,
           bottom: TabBar(
             onTap: (value) {
               switch (value) {
@@ -38,7 +41,8 @@ class _MenuContentWidgetState extends State<MenuContentWidget> {
                 default:
               }
             },
-            tabs: MenuTopExample.menuTopList.map((e) => Text(e.title)).toList(),
+            tabs:
+                MenuTopExample.menuTopList.map((e) => Text(e.title!)).toList(),
           ),
         ),
         body: RouterOutlet(),

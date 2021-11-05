@@ -12,6 +12,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const SplashPage()),
         ModuleRoute('/home', module: HomeModule()),
-        ModuleRoute('/menu', module: MenuModule()),
+        ModuleRoute('/menu',
+            module: MenuModule(), transition: TransitionType.fadeIn),
       ];
 }
