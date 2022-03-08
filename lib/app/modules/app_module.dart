@@ -1,7 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:poc_portal/app/modules/home/home_module.dart';
-import 'package:poc_portal/app/modules/menu_content/menu_content_module.dart';
 import 'package:poc_portal/app/splash_page.dart';
+
+import 'menu/menu_module.dart';
 
 class AppModule extends Module {
   @override
@@ -11,6 +12,7 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const SplashPage()),
         ModuleRoute('/home', module: HomeModule()),
-        ModuleRoute('/menu_content', module: MenuContentModule()),
+        ModuleRoute('/menu',
+            module: MenuModule(), transition: TransitionType.fadeIn),
       ];
 }
