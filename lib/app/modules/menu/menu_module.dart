@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:poc_portal/app/modules/menu/examples/items_card_content_example.dart';
 import 'package:poc_portal/app/modules/menu/examples/items_left_menu_example.dart';
+import 'package:poc_portal/app/modules/menu/pages/glossary_widget.dart';
 
 import 'pages/card_menu_left_widget.dart';
 import 'pages/menu_content_widget.dart';
@@ -15,11 +15,11 @@ class MenuModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute(
           '/',
-          child: (_, __) => const MenuContentWidget(),
+          child: (context, args) => const MenuContentWidget(),
           children: [
             ChildRoute(
               '/primeiros_passos',
-              child: (_, __) => MenuLeftWidget(
+              child: (context, args) => MenuLeftWidget(
                 title: 'Primeiros passos e acessos',
                 itemsLeftMenu: ItemsLeftMenuExample.itemsLeftMenuFirstSteps,
               ),
@@ -169,7 +169,11 @@ class MenuModule extends Module {
                 ),
               ],
             ),
-            ChildRoute('/glossary', child: (_, __) => Container()),
+            ChildRoute('/glossary',
+                child: (_, __) => GlossaryWidget(
+                      title: 'glossário',
+                      itemsCardContent: ItemsCardContentExample.cardGlossary,
+                    )),
           ],
         ),
       ];

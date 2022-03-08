@@ -2,8 +2,10 @@ import 'package:poc_portal/app/modules/menu/models/items_top_menu_model.dart';
 
 class MenuTopExample {
   static final List<MenuTop> menuTopList = [
-    MenuTop(image: "", title: 'home', path: '/home/'),
-    MenuTop(title: 'primeiros passos', path: '/menu/primeiros_passos/jira'),
+    MenuTop(image: "images/Hello.png", title: 'home', path: '/home/'),
+    MenuTop(
+        title: 'primeiros passos e acessos',
+        path: '/menu/primeiros_passos/jira'),
     MenuTop(
         title: 'tecnologias utilizadas',
         path: '/menu/tecnologias_utilizadas/clean_arch'),
