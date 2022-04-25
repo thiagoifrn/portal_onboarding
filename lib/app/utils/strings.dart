@@ -55,11 +55,12 @@ class Strings {
 
 //Textos  genericos para colcoar na guia glossário
   static const String apiContentGlossary =
-      'API é a sigla para “Application Programming Interface”, ou, em português, “Interface de Programação de Aplicação”. Basicamente, a API faz a comunicação entre dois sistemas distintos.';
+      'API é a sigla para “Application Programming Interface”, ou, em português, “Interface de Programação de Aplicação”. Basicamente, a API faz a comunicação entre dois sistemas distintos. API é a sigla para “Application Programming Interface”, ou, em português, “Interface de Programação de Aplicação”. Basicamente, a API faz a comunicação entre dois sistemas distintos.';
   static const String backlogGlossary =
-      'É uma lista de tarefas e pendências na construção de um produto ou projeto. São pontos que ainda não entraram na esteira de desenvolvimento.';
+      'É uma lista de tarefas e pendências na construção de um produto ou projeto. São pontos que ainda não entraram na esteira de desenvolvimento. É uma lista de tarefas e pendências na construção de um produto ou projeto. São pontos que ainda não entraram na esteira de desenvolvimento.';
   static const String churnGlossary =
-      'O Churn é um indicador que mostra a taxa de clientes que cancelaram o contrato com a sua empresa ou pararam de consumir os seus produtos.';
+      'O Churn é um indicador que mostra a taxa de clientes que cancelaram o contrato com a sua empresa ou pararam de consumir os seus produtos. O Churn é um indicador que mostra a taxa de clientes que cancelaram o contrato com a sua empresa ou pararam de consumir os seus produtos.';
   static const String dauGlossary =
-      'DAU é a sigla para Daily Active Users (ou Usuários Ativos Diariamente) e representa o número de pessoas que estavam ativas no seu produto durante o dia.';
+      'DAU é a sigla para Daily Active Users (ou Usuários Ativos Diariamente) e representa o número de pessoas que estavam ativas no seu produto durante o dia.DAU é a sigla para Daily Active Users (ou Usuários Ativos Diariamente) e representa o número de pessoas que estavam ativas no seu produto durante o dia.';
+  static const alfabeto = 'abcdefghijklmnopqrstuvwxyz';
 }
